@@ -1,4 +1,3 @@
-
 # Budget Planner
 
 The objective of this project is to maintain a well-rounded budget planner to keep track of 
@@ -10,4 +9,9 @@ gas prices.
 ## Authors
 
 - Created by Michell, Ben & Sonny
+
+
+## Demo
+
+To test the budget planner you can visit it here - https://budgetplannertabor.azurewebsites.net
 
