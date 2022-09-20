@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <div class="container">
+        <a asp-controller="Account" asp-action="UserView" class="navbar-brand" role="button">Budget Planner</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a asp-controller="Account" asp-action="UserView" class="nav-link" role="button">Home</a>
+            </li>
+            <li class="nav-item">
+              <a asp-controller="Home" asp-action="About" class="nav-link" role="button">About</a>
+            </li>
+          </ul>
+              <form method="GET" asp-controller="Account" asp-action="UserView" class="form-inline my-2 my-lg-0" style="margin-right: 5px;">
+            <input type="hidden" name="sort" value='@Context.Request.Query["sort"]' class="w-100" />
+            <div class="input-group">
+                <input name="filter" class="form-control" value='@Context.Request.Query["filter"]' />
+                <div class="input-group-append">
+                    <input type="submit" value="Purchase Search" class="btn btn-secondary" />   
+                </div>
+            </div>
+        </form>
+          <partial name="_LoginPartial" />
+        </div>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center">
+        <hr>
+        © Budget Planner @DateTime.Now.Year
+    </footer>
+
+    <script src="/lib/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+</body>
+</html>

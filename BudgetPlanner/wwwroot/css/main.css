@@ -1,0 +1,91 @@
+footer {
+    color: gray;
+}
+
+a#ListofBudgets{
+ background-color: #0509c7; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+a.userButton1{
+  background-color: #2baaff; /* Blue */
+  border-radius: 15px;
+  color: white;
+  margin-left: 5px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 16px;
+}
+
+a.userButton2{
+  background-color: #2baaff; /* Blue */
+  border-radius: 15px;
+  margin-left: 5px;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 16px;
+}
+
+a.userButton3{
+  background-color: #2baaff; /* Blue */
+  border-radius: 15px;
+  margin-left: 5px;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  font-size: 16px;
+}
+
+div.buttonCenter{
+  width: 50%;
+  margin: 0 auto;
+}
+
+h1.budgetName{
+  justify-content: center;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+span#Goal{
+  border-radius: 25px;
+  background: #31d6fffd;
+  box-shadow: 3px 5px 8px;
+  padding: 10px;
+  width: 100px;
+  height: 50;
+}
+
+span#Spent{
+  border-radius: 25px;
+  background: #31d6fffd;
+  box-shadow: 3px 5px 8px;
+  padding: 10px;
+  width: 100px;
+  height: 50;
+  color: red;
+}
+
+span#Left{
+  border-radius: 25px;
+  background: #31d6fffd;
+  box-shadow: 3px 5px 8px;
+  padding: 10px;
+  width: 100px;
+  height: 50;
+  color: green;
+}
+
+span.field-validation-error{
+  color: red;
+}

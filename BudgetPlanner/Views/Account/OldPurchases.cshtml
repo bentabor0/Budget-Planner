@@ -1,0 +1,26 @@
+@using BudgetPlanner.Model
+
+@model PaginatedList<Purchase>
+
+<div>
+    <h4>Past Purchases</h4>
+</div>
+
+<div>
+    <partial name="_PurchasePartial" for="@Model" />
+</div>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-controller="Account" asp-action="OldPurchases" asp-route-pageNumber="@(Model.PageIndex - 1)"
+    class="btn btn-outline-primary @prevDisabled">
+    Previous
+</a>
+
+<a asp-controller="Account" asp-action="OldPurchases" asp-route-pageNumber="@(Model.PageIndex + 1)"
+    class="btn btn-outline-primary @nextDisabled">
+    Next
+</a>

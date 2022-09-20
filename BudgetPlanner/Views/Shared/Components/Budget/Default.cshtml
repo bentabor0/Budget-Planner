@@ -1,0 +1,7 @@
+@model BudgetModel
+
+@{
+    <li>
+        <a asp-controller="Account" asp-action="ViewBudget" class="nav-link" role="button">Budget (@Html.Raw(@Model.BudgetGoal))</a>
+    </li>
+}

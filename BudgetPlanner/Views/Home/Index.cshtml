@@ -1,0 +1,55 @@
+@model User
+
+@{
+
+  BudgetModel budget = Model.Budgets.FirstOrDefault(x => !x.IsArchived);}
+
+  <div class="name">
+    <h1 class="budgetName">@budget.Name</h1>
+  </div>
+  <div class="buttonCenter">
+  <a class="userButton1" asp-action="AddBudget">New Budget</a> |
+
+  <a class="userButton2" asp-controller="Account" asp-action="editbudget"
+    asp-route-id="@Model.Budgets.FirstOrDefault(x => !x.IsArchived).ID">Edit Budget Goal</a> |
+
+  <a class="userButton3" asp-action="ViewAllBudgets" asp-route-id="@Model.ID">View Old Budgets</a>
+  </div><br>
+  <div>
+    <div class="productStyles">
+      <h3>Budget Goal: <span id="Goal">@budget.BudgetGoal.ToString("C")</span> |
+       Total Spent: <span id="Spent">@budget.TotalSpent.ToString("C")</span> |
+       Amount Left: <span id="Left">$@budget.AmountLeft.ToString("F2")</span></h3>
+    </div><br>
+
+    <div>
+
+    <div>
+      <h4>Purchases</h4>
+      <div>
+        <p>Sort by:
+          <a asp-controller="Account" asp-action="UserView" asp-route-sort='@ViewData["DescriptionSortParm"]'
+            asp-route-filter='@Context.Request.Query["filter"]'>Description</a> |
+
+          <a asp-controller="Account" asp-action="UserView" asp-route-sort='@ViewData["PriceSortParm"]'
+            asp-route-filter='@Context.Request.Query["filter"]'>Price</a> |
+
+          <a asp-controller="Account" asp-action="UserView" asp-route-sort='@ViewData["DateSortParm"]'
+            asp-route-filter='@Context.Request.Query["filter"]'>Date</a> |
+
+          <a asp-controller="Account" asp-action="UserView" class="btn btn-outline-secondary" role="button">Reset</a>
+        </p>
+      </div>
+
+      <div>
+        <partial name="_PurchasePartial" for="@Model.Budgets.FirstOrDefault(x => !x.IsArchived).Purchases" />
+      </div>
+    </div>
+
+    <div>
+      <a asp-controller="Account" asp-action="AddPurchase" class="btn btn-primary" role="button">Add Purchase</a>
+      <a asp-controller="Account" asp-action="Purchases" class="btn btn-secondary" role="button">View All</a>
+    </div>
+
+    </div>
+}

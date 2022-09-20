@@ -1,0 +1,23 @@
+@model IEnumerable<BudgetPlanner.DataAccess.Models.Purchase>
+
+   <table class="table">
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+            @foreach(var purchase in @Model)
+            {
+                <tr>
+                    <td>@purchase.Description</td>
+                    <td>@purchase.Amount.ToString("C")</td>
+                    <td>@purchase.Date.ToString("g")</td>
+                    <td>
+                    <a class="btn btn-primary" asp-controller="Account" asp-action="Purchase" asp-route-id="@purchase.ID">View</a>
+                    |
+                    <a class="btn btn-secondary" asp-action="editPurchase" asp-route-id="@purchase.ID">Edit</a>
+                    </td>
+                </tr>
+            }
+    </table>

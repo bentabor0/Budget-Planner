@@ -1,0 +1,18 @@
+@model IEnumerable<BudgetPlanner.DataAccess.Models.BudgetModel>
+
+@if (Model != null)
+{
+    <h1>Old Budgets</h1>
+
+    foreach (BudgetModel b in Model)
+    {
+        <a class="btn btn-primary" asp-controller="Account" asp-action="ViewPastBudget" asp-route-id="@b.ID">@b.Name</a><br><br>
+    }
+
+}
+else
+{
+    <p>No Budgets have been found with that provided Id.</p>
+}
+
+

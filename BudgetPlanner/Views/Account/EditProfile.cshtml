@@ -1,0 +1,66 @@
+@using BudgetPlanner.Model
+
+@model EditProfileViewModel
+<h1>Edit User</h1>
+<form asp-action="EditProfile" method="POST" class="form">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmailAddress"></label>
+        <input asp-for="EmailAddress" class="form-control" />
+        <span asp-validation-for="EmailAddress"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address2"></label>
+        <input asp-for="Address2" class="form-control" />
+        <span asp-validation-for="Address2"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="State"></label>
+        <input asp-for="State" class="form-control" />
+        <span asp-validation-for="State"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Zip"></label>
+        <input asp-for="Zip" class="form-control" />
+        <span asp-validation-for="Zip"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPassword"></label>
+        <input type="password" name="NewPassword" class="form-control" />
+        <span asp-validation-for="NewPassword"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input type="password" name="ConfirmPassword" class="form-control" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+        <label asp-for="OldPassword">Enter your password to confirm changes</label>
+        <input type="password" name="OldPassword" class="form-control" />
+        <span asp-validation-for="OldPassword"></span>
+    </div>
+    <input type="submit" class="btn btn-success" value="Save" />
+    <a asp-controller="account" asp-action="Profile" class="btn btn-primary" role="button">Cancel</a>
+</form>

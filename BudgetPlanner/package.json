@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "publish-to-folder": "dotnet publish --configuration Release --output ./dist",
+        "minify-css": "npx uglifycss --output ./dist/wwwroot/css/main.css ./dist/wwwroot/css/main.css",
+        "minify-js": "npx uglify-js ./dist/wwwroot/js/site.js --compress --mangle --output ./dist/wwwroot/js/site.js",
+        "build": "npm run publish-to-folder && npm run minify-css"
+    },
+    "dependencies": {
+        "uglify-js": "^3.12.5",
+        "uglifycss": "^0.0.29"
+    }
+}

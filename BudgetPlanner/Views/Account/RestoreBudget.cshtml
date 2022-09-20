@@ -1,0 +1,17 @@
+@model IEnumerable<BudgetModel>
+<div>
+    <h3>Old Budgets</h3>
+    <table class="table">
+        <tr>
+            <th>Budget</th>
+            <th>Action</th>
+        </tr>
+        @foreach (BudgetModel b in Model)
+        {
+            <tr>
+                <td>@b.BudgetGoal</td>
+                <td><a asp-controller="Admin" asp-action="RestoreBudget" asp-route-id="@b.ID" class="btn btn-link">Restore</a></td>
+            </tr>
+        }
+    </table>
+</div>

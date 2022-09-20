@@ -1,0 +1,8 @@
+@model User
+<h1>User Information</h1>
+<p>Name: @Model.FullName</p>
+<p>Email: @Model.EmailAddress</p>
+<p>Role: @(Model.IsAdmin ? "Admin" : "User")</p>
+<p>Mailing Address: @Model.Address, @Model.Address2 @Model.City, @Model.State @Model.Zip</p>
+
+<p><a class="btn btn-primary" asp-action="EditProfile" role="button">Edit</a></p>

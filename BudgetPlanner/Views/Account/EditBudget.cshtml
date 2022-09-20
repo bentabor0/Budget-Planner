@@ -1,0 +1,20 @@
+@model BudgetModel
+<h2>Update Budget</h2>
+<div class="form-horizontal">
+    <form method="post">
+        <input type="hidden" asp-for="ID" />
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BudgetGoal"></label>
+            <input asp-for="BudgetGoal" class="form-control" />
+        </div>
+        <p>
+            <button type="submit" class="btn btn-primary" role="button">Save</button>
+            <a asp-controller="account" asp-action="UserView" class="btn btn-primary" role="button">Cancel</a>
+        </p>
+    </form>
+</div>

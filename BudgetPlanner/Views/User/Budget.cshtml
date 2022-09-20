@@ -1,0 +1,25 @@
+@model BudgetPlanner.DataAccess.Models.BudgetModel
+
+@if (Model != null)
+{
+    <div class="productStyles">
+        <h2>Budget Goal: @Model.BudgetGoal.ToString("C")</h2><br>
+        <h3>Total Spent this Budget: @Model.TotalSpent.ToString("C")</h3><br>
+        <h3>Amount left to spend: @Model.AmountLeft.ToString("C")</h3><br>
+    </div>
+
+    <div>
+    @foreach(var purchase in Model.Purchases)
+    {
+                <h3 class="card-title">@purchase.Description, @purchase.Amount.ToString("C")</h3>
+                <p class="card-text">@purchase.Date</p>
+                <div class="text-center">
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="Purchase" asp-route-id="@purchase.ID">View</a>
+                </div>
+    }
+</div>
+}
+else
+{
+    <p>No Budgets have been found with that provided Id.</p>
+}

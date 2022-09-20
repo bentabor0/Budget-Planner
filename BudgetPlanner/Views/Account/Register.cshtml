@@ -1,0 +1,39 @@
+@model BudgetPlanner.Models.RegisterViewModel
+
+
+<h2>Register</h2>
+
+<div class="form-horizontal">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmailAddress"></label>
+            <input asp-for="EmailAddress" class="form-control" />
+            <span asp-validation-for="EmailAddress"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PasswordConfirm"></label>
+            <input asp-for="PasswordConfirm" class="form-control" />
+            <span asp-validation-for="PasswordConfirm"></span>
+        </div>
+
+        <div asp-validation-summary="All"></div>
+        <p>
+            <button type="submit" class="btn btn-primary" role="button">Register</button>
+        </p>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+@model BudgetPlanner.DataAccess.Models.Purchase
+
+@if (Model != null)
+{
+    <div class="productStyles">
+        <h2>@Model.Description</h2>
+        <p>Amount: @Model.Amount.ToString("C")</p>
+        <p>Date Purchased: @Model.Date.ToString("g")</p>
+    </div>
+
+    <a class="btn btn-primary" asp-controller="Account" asp-action="UserView" class="dropdown-item" role="button">return to budget</a>
+}
+else
+{
+    <p>No purchases have been found with that provided Id.</p>
+}
+
+
